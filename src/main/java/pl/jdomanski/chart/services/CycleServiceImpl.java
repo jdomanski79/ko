@@ -2,9 +2,12 @@ package pl.jdomanski.chart.services;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import pl.jdomanski.chart.model.Cycle;
 import pl.jdomanski.chart.repositories.CycleRepository;
 
+@Service
 public class CycleServiceImpl implements CycleService {
 
 	private CycleRepository cycleRepository;
@@ -25,8 +28,8 @@ public class CycleServiceImpl implements CycleService {
 
 	@Override
 	public void delete(Cycle cycle) {
-		// TODO Auto-generated method stub
 
+		cycleRepository.save(cycle);
 	}
 
 }

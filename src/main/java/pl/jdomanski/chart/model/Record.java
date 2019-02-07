@@ -36,4 +36,20 @@ public class Record {
 	@ManyToOne
 	@JoinColumn(name = "cycle_id")
 	private Cycle cycle;
+
+	public Record() {};
+	
+	public Record(LocalDate date, MucusTypes mucusType, String description, boolean intercourse, Frequencies frequency,
+			boolean peak) {
+		this.date = date;
+		this.mucusType = mucusType;
+		this.description = description;
+		this.intercourse = intercourse;
+		this.frequency = frequency;
+		this.peak = peak;
+	}
+	
+	
+
 }
+

@@ -1,5 +1,6 @@
 package pl.jdomanski.chart.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,5 +21,10 @@ public class Cycle {
 	private Long id;
 	
 	@OneToMany(mappedBy="cycle", cascade=CascadeType.ALL)
-	private List<Record> records;
+	private List<Record> records = new ArrayList<>();
+	
+	public void addRecord(Record record) {
+		records.add(record);
+		record.setCycle(this);
+	}
 }
